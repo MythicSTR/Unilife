@@ -154,6 +154,27 @@ class viewProduct extends Component{
 						<div className='price-rate'>
 							Rs. {this.state.card.price}
 						</div>
+						<div className="star-rating">
+						  {[...Array(5)].map((star, index) => {
+							index +=1;
+							return (
+							  <button
+								type="rating_button"
+								key={index}
+								className={index <= (hover || rating) ? "star-button on" : "star-button off"}
+								onClick={() => {
+								  this.setState({rating:index});
+								  this.saveUserRating(index);
+								  this.udpateRating(index);
+							  }}
+								onMouseEnter={() => this.setState({hover:index})}
+								onMouseLeave={() => this.setState({hover:rating})}
+							  >
+								<span className="star">&#9733;</span>
+							  </button>
+							);
+						  })}
+						</div>
 						<div className='description'>
 							{this.state.card.description}
 						</div>
@@ -171,27 +192,6 @@ class viewProduct extends Component{
 							</button>
 						</div>
 
-            <div className="star-rating">
-              {[...Array(5)].map((star, index) => {
-                index +=1;
-                return (
-                  <button
-                    type="rating_button"
-                    key={index}
-                    className={index <= (hover || rating) ? "on" : "off"}
-                    onClick={() => {
-                      this.setState({rating:index});
-                      this.saveUserRating(index);
-                      this.udpateRating(index);
-                  }}
-                    onMouseEnter={() => this.setState({hover:index})}
-                    onMouseLeave={() => this.setState({hover:rating})}
-                  >
-                    <span className="star">&#9733;</span>
-                  </button>
-                );
-              })}
-            </div>
 
 					</div>
 				</div>

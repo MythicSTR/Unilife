@@ -88,8 +88,8 @@
 }
 
 .category-list {
-	height: 85%;
-	width: 6rem;
+	height: 85% !important;
+	width: 6rem !important;
 	border: none;
 	border-radius: 0.4rem;
 	background-color: #2EC4B6;

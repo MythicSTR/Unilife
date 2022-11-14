@@ -26,6 +26,20 @@
 	color: #FF9F1C;
 }
 
+.star-button {
+	font-size: 3rem;
+	border: none;
+	background-color: #FFFFFF;
+}
+
+.star-button:focus {
+	outline: none;
+}
+
+.on {
+	color: #FF9F1C;
+}
+
 .button-options {
 	display: flex;
 	gap: 1rem;
